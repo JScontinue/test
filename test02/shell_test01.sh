@@ -11,7 +11,8 @@ ch1=`echo ${ch} | tr a-z A-Z`
 
 #寻找型号的路径并重定向搭配temp文件
 touch temp
-find . -type d | grep "${type}[A-Za-z0-9_-]*$" > temp
+#find . -type d | grep "${type}[A-Za-z0-9_-]*$" > temp
+find . -type d | grep "${type}[^s/]*$" > temp
 cat temp
 
 #把temp读取的每行赋给oldPath变量
